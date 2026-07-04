@@ -1,0 +1,9 @@
+services:
+  postiz:
+    environment:
+      DATABASE_URL: 'postgresql://postiz-user:postiz-password@postiz-postgres:5432/postiz-db-local'
+      JWT_SECRET: 'local-dev-jwt-secret-postiz-2026'
+
+  temporal-ui:
+    ports:
+      - '8088:8080'

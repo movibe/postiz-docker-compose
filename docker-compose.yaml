@@ -200,7 +200,7 @@ services:
       interval: 10s
       timeout: 10s
       retries: 10
-      start_period: 60s
+      start_period: 120s
     volumes:
       - temporal-elasticsearch-data:/usr/share/elasticsearch/data
 
@@ -211,6 +211,7 @@ services:
     environment:
       POSTGRES_PASSWORD: temporal
       POSTGRES_USER: temporal
+      POSTGRES_DB: temporal
     networks:
       - temporal-network
     expose:
@@ -253,7 +254,7 @@ services:
       interval: 15s
       timeout: 5s
       retries: 20
-      start_period: 180s
+      start_period: 300s
     volumes:
       - ./dynamicconfig:/etc/temporal/config/dynamicconfig
     labels:
