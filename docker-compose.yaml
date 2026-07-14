@@ -112,6 +112,8 @@ services:
       - postiz-uploads:/uploads/
     ports:
       - "4007:5000"
+    expose:
+      - "5000"
     networks:
       - postiz-network
       - temporal-network
