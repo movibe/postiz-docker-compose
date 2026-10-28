@@ -224,8 +224,8 @@ services:
   temporal:
     container_name: temporal
     restart: always
-    ports:
-      - '7233:7233'
+    expose:
+      - '7233'
     image: temporalio/auto-setup:1.28.1
     depends_on:
       - temporal-postgresql
@@ -307,4 +307,3 @@ networks:
     external: false
   temporal-network:
     driver: bridge
-    name: temporal-network
